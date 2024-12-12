@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./src/css/style.css">
+  <script src="./src/js/script.js"></script>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <title>Spotify</title>
+</head>
+
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <div class="menu">
+        <h3>Filters</h3>
+        <div class="filters">
+          <button id="all-songs-filter">All Songs</button>
+          <button id="favorites-filter">Favorites</button>
+        </div>
+      </div>
+      <div class="thumbnail">
+        <img src="" alt="song image">
+      </div>
+    </aside>
+
+    <div class="main-content">
+      <header class="header">
+        <h1>Music</h1>
+        <input type="text" class="search-bar" placeholder="Search...">
+        <div class="user-info">
+          <span class="username">User</span>
+          <button class="pause-btn">Play/Pause</button>
+        </div>
+      </header>
+
+      <div id="song-list" class="music-list"></div>
+
+      <div id="upload-modal" class="modal">
+        <div class="modal-content">
+          <span class="close-modal">&times;</span>
+          <h2>Upload New Song</h2>
+          <form id="upload-form">
+            <div class="form-group">
+              <label for="song-file">Song MP3:</label>
+              <input type="file" id="song-file" accept=".mp3" required>
+              <span class="error" id="song-file-error"></span>
+            </div>
+            <div class="form-group">
+              <label for="song-title">Title:</label>
+              <input type="text" id="song-title" maxlength="20" required>
+              <span class="error" id="song-title-error"></span>
+            </div>
+            <div class="form-group">
+              <label for="song-artist">Artist:</label>
+              <input type="text" id="song-artist" maxlength="20" required>
+              <span class="error" id="song-artist-error"></span>
+            </div>
+            <div class="form-group">
+              <label for="song-cover">Cover Image:</label>
+              <input type="file" id="song-cover" accept=".png,.jpg,.jpeg" required>
+              <span class="error" id="song-cover-error"></span>
+            </div>
+            <button type="submit">Upload Song</button>
+          </form>
+        </div>
+      </div>
+
+      <button id="open-upload-modal">Upload Song</button>
+
+
+      <div class="player">
+        <div class="now-playing-bar">
+
+          <div class="song-info">
+            <div id="current-song-title" class="song-title">No Song Playing</div>
+            <div id="current-song-artist" class="song-artist">-</div>
+          </div>
+        </div>
+        <div class="controls">
+          <button id="prev-song">⏮</button>
+          <button id="play-pause">▶️</button>
+          <button id="next-song">⏭</button>
+          <button id="loop-btn">🔁</button>
+          <button id="shuffle-btn">🔀</button>
+        </div>
+        <div class="progress-bar">
+          <input type="range" id="progress-bar" min="0" max="100" value="0" class="slider">
+          <span id="current-time">0:00</span>
+          <span id="total-time">0:00</span>
+        </div>
+        <div class="volume-control">
+          <button id="volume-icon">🔊</button>
+          <input type="range" id="volume-bar" min="0" max="100" value="100" class="slider">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <audio id="audio-player"></audio>
+
+</body>
+
+</html>
